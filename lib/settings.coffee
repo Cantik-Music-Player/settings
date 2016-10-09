@@ -13,9 +13,11 @@ class Settings
 
     @settings = @loadSettings()
 
-    @cantik.pluginManager.plugins.sidebar.addLink('Settings', 'Main', @activate.bind(@), null, false)
+    @cantik.pluginManager.plugins.sidebar.addLink('Settings', 'Main', @show.bind(@), null, false)
 
   activate: (state) ->
+
+  show: (state) ->
     @settingsView = new SettingsView(@)
 
   deactivate: ->
